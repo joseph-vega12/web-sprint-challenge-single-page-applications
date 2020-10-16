@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Form(props){
 
-    const { update, submit,values } = props;
+    const { update, submit, values, errors } = props;
 
     const onChange = (evt) => {
         const { name, value, type, checked } = evt.target;
@@ -17,6 +17,9 @@ export default function Form(props){
 
     return (
         <>
+        <div>{errors.name}</div>
+        <div>{errors.size}</div>
+
         <form onSubmit={onSubmit}>
                 <label>
                     name:
